@@ -13,6 +13,7 @@ bookRouter.get("/", (req, res) => {
   const statement = "select * from Book_Tb";
   db.query(statement, (error, result) => {
     if (error) {
+      console.log(result);
       res.send("error");
     } else {
       res.setHeader("Content-Type", "application/json");
